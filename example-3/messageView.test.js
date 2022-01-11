@@ -11,10 +11,13 @@ describe('MessageView', () => {
   const view = new MessageView();
 
   it('clicks the button', () => {
+    const inputEl = document.querySelector('#message-input');
+    inputEl.value = 'Hello World!'  
+
     const buttonEl = document.querySelector('#show-message-button');
     buttonEl.click();
 
-    expect(document.querySelector('#message')).not.toBeNull();
+    expect(document.querySelector('#message').innerText).toEqual('Hello World!');
   });
 
   it('hides the message', () => {

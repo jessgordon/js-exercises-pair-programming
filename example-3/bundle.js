@@ -11,6 +11,7 @@
           this.buttonEl = document.querySelector("#show-message-button");
           this.hideButtonEl = document.querySelector("#hide-message-button");
           this.mainContainerEl = document.querySelector("#main-container");
+          this.inputEl = document.querySelector("#message-input");
           this.buttonEl.addEventListener("click", () => {
             this.displayMessage();
           });
@@ -20,7 +21,7 @@
         }
         displayMessage() {
           let div = document.createElement("div");
-          div.innerText = "This is a message displayed by JavaScript";
+          div.innerText = this.inputEl.value;
           div.id = "message";
           this.mainContainerEl.append(div);
         }
